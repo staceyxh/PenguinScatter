@@ -98,27 +98,7 @@ var displaySpreadFinal_HW = function(students)
     
 }
 
-var drawToolTip = function(students)
-{
-        var width = 550;
-        var height= 300;
-        var svg = d3.select("#spread svg")
-            .attr("width",width)
-            .attr("height",height)
-            .attr("id","graph")
 
-					//Get this bar's x/y values, then augment for the tooltip
-        var xPosition =d3.event.pageX;
-        var yPosition = d3.event.pageY;
-					//Create the tooltip label
-        svg.append("text")
-            .attr("id", "tooltip")
-            .attr("x", xPosition)
-            .attr("y", yPosition)
-            .text("true");
-
-			   
-}
 
 var displaySpreadHW_Quiz = function(students)
 {
