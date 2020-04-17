@@ -67,13 +67,22 @@ var displaySpreadFinal_HW = function(students)
             return yScale(getHWmean(student));  
         })
         .attr("r",3)
-        .on("mouseover", drawToolTip)
-			   .on("mouseout", function() {
-			   
-					//Remove the tooltip
-					d3.select("#tooltip").remove();
-					
-			   })
+        .on("mouseover", function(student) {
+    //Get this bar's x/y values, then augment for the tooltip
+        var xPosition =d3.event.pageX;
+        var yPosition = d3.event.pageY;
+    //Update the tooltip position and value
+        d3.select("#tooltip") 
+        .style("left", xPosition + "px") 
+        .style("top", yPosition + "px") 
+        .select("#image")
+        .attr("src","imgs/"+ student.picture);
+    //Show the tooltip
+        d3.select("#tooltip").classed("hidden", false);
+        })
+        .on("mouseout", function() {
+        //Hide the tooltip
+        d3.select("#tooltip").classed("hidden", true); })
 
     
     
