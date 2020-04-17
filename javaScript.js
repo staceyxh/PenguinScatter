@@ -48,9 +48,6 @@ var displaySpreadFinal_HW = function(students)
                           d3.max(students,getHWmean)
                         ])
                 .range([height,0]);
-    var div = d3.select("body").append("div")
-    .attr("class", "tooltip")        
-    .style("opacity", 0);  
     
                         
     //draw the dots     
@@ -68,20 +65,16 @@ var displaySpreadFinal_HW = function(students)
         })
         .attr("r",3)
         .on("mouseover", function(student) {
-    //Get this bar's x/y values, then augment for the tooltip
         var xPosition =d3.event.pageX;
         var yPosition = d3.event.pageY;
-    //Update the tooltip position and value
         d3.select("#tooltip") 
         .style("left", xPosition + "px") 
         .style("top", yPosition + "px") 
         .select("#image")
         .attr("src","imgs/"+ student.picture);
-    //Show the tooltip
         d3.select("#tooltip").classed("hidden", false);
         })
         .on("mouseout", function() {
-        //Hide the tooltip
         d3.select("#tooltip").classed("hidden", true); })
 
     
@@ -142,20 +135,16 @@ var displaySpreadHW_Quiz = function(students)
         })
         .attr("r",3)
         .on("mouseover", function(student) {
-    //Get this bar's x/y values, then augment for the tooltip
         var xPosition =d3.event.pageX;
         var yPosition = d3.event.pageY;
-    //Update the tooltip position and value
         d3.select("#tooltip") 
         .style("left", xPosition + "px") 
         .style("top", yPosition + "px") 
         .select("#image")
         .attr("src","imgs/"+ student.picture);
-    //Show the tooltip
         d3.select("#tooltip").classed("hidden", false);
         })
         .on("mouseout", function() {
-        //Hide the tooltip
         d3.select("#tooltip").classed("hidden", true); })
 
 
@@ -212,16 +201,13 @@ var displaySpreadTest_Final = function(students)
         })
         .attr("r",3)
         .on("mouseover", function(student) {
-    //Get this bar's x/y values, then augment for the tooltip
         var xPosition =d3.event.pageX;
         var yPosition = d3.event.pageY;
-    //Update the tooltip position and value
         d3.select("#tooltip") 
         .style("left", xPosition + "px") 
         .style("top", yPosition + "px") 
         .select("#image")
         .attr("src","imgs/"+ student.picture);
-    //Show the tooltip
         d3.select("#tooltip").classed("hidden", false);
         })
         .on("mouseout", function() {
@@ -282,16 +268,13 @@ var displaySpreadTest_Quiz = function(students)
         })
         .attr("r",3)
         .on("mouseover", function(student) {
-    //Get this bar's x/y values, then augment for the tooltip
         var xPosition =d3.event.pageX;
         var yPosition = d3.event.pageY;
-    //Update the tooltip position and value
         d3.select("#tooltip") 
         .style("left", xPosition + "px") 
         .style("top", yPosition + "px") 
         .select("#image")
         .attr("src","imgs/"+ student.picture);
-    //Show the tooltip
         d3.select("#tooltip").classed("hidden", false);
         })
         .on("mouseout", function() {
