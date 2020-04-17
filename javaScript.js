@@ -141,6 +141,23 @@ var displaySpreadHW_Quiz = function(students)
             return yScale(getQuizMean(student));  
         })
         .attr("r",3)
+        .on("mouseover", function(student) {
+    //Get this bar's x/y values, then augment for the tooltip
+        var xPosition =d3.event.pageX;
+        var yPosition = d3.event.pageY;
+    //Update the tooltip position and value
+        d3.select("#tooltip") 
+        .style("left", xPosition + "px") 
+        .style("top", yPosition + "px") 
+        .select("#image")
+        .attr("src","imgs/"+ student.picture);
+    //Show the tooltip
+        d3.select("#tooltip").classed("hidden", false);
+        })
+        .on("mouseout", function() {
+        //Hide the tooltip
+        d3.select("#tooltip").classed("hidden", true); })
+
 
     
     svg.append("line")
@@ -194,6 +211,23 @@ var displaySpreadTest_Final = function(students)
             return yScale(getFianl(student));  
         })
         .attr("r",3)
+        .on("mouseover", function(student) {
+    //Get this bar's x/y values, then augment for the tooltip
+        var xPosition =d3.event.pageX;
+        var yPosition = d3.event.pageY;
+    //Update the tooltip position and value
+        d3.select("#tooltip") 
+        .style("left", xPosition + "px") 
+        .style("top", yPosition + "px") 
+        .select("#image")
+        .attr("src","imgs/"+ student.picture);
+    //Show the tooltip
+        d3.select("#tooltip").classed("hidden", false);
+        })
+        .on("mouseout", function() {
+        //Hide the tooltip
+        d3.select("#tooltip").classed("hidden", true); })
+
 
     
     svg.append("line")
@@ -247,6 +281,23 @@ var displaySpreadTest_Quiz = function(students)
             return yScale(getQuizMean(student));  
         })
         .attr("r",3)
+        .on("mouseover", function(student) {
+    //Get this bar's x/y values, then augment for the tooltip
+        var xPosition =d3.event.pageX;
+        var yPosition = d3.event.pageY;
+    //Update the tooltip position and value
+        d3.select("#tooltip") 
+        .style("left", xPosition + "px") 
+        .style("top", yPosition + "px") 
+        .select("#image")
+        .attr("src","imgs/"+ student.picture);
+    //Show the tooltip
+        d3.select("#tooltip").classed("hidden", false);
+        })
+        .on("mouseout", function() {
+        //Hide the tooltip
+        d3.select("#tooltip").classed("hidden", true); })
+
 
     
     svg.append("line")
